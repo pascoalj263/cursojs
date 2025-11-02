@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(255, 68, 0, 0.884);
+            color: #fff;
+        }
+        h1{
+            font-size: 2rem;
+            text-align: center;
+            font-family: toybox;
+            font-weight: lighter;
+        }
+        input{
+            border: 2px solid rgba(0, 0, 0, 0.466);
+            border-radius: 10px;
+            outline: none;
+            padding: 8px;
+            background-color: #fff;
+            margin-left: 12px;
+        }
+        .verificar{
+            color: orangered;
+            background-color: #fff;
+            padding: 8px 14px;
+            cursor: pointer;font-weight: 600;
+            margin-left: 10px;
+            box-shadow: 0px 0px 30px rgb(255, 230, 0);
+        }
+        .verificar:hover{
+            background-color: transparent;
+            color: #fff;
+        }
+        .res{
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidades fora de Angola</h1>
+    Qual a sua nacionalidade????  <input type="text" name="caixa" id="caixa">
+    <input type="button" value="Verificar" onclick="verificar()" class="verificar">
+    <div class="res">
+        ....
+    </div>
+
+    <script>
+        function verificar(){
+            var cx = document.querySelector('input#caixa')
+            var nacionalidade = (cx.value)
+            var resultado = document.querySelector('div.res')
+            if(nacionalidade == 'Angola'){
+                resultado.innerHTML=`Vivendo em <strong>${nacionalidade}</strong>, você é angolano.`
+            }else{
+                resultado.innerHTML=`Vivendo em <strong>${nacionalidade}</strong>, você é <i>Estrangeiro</i>.`
+            }
+            
+        }
+    </script>
+
+</body>
+</html>

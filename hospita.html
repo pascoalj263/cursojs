@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hospital — Marcação de Consultas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Hospital Geral — Marcação de Consultas</h1>
+    <p class="subtitle">Agende a sua consulta de forma rápida e segura</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <button id="openFormBtn" class="primary">Agendar Consulta</button>
+      <label for="filterSpecialty">Filtrar por especialidade:</label>
+      <select id="filterSpecialty">
+        <option value="">Todas</option>
+        <option>Clínica Geral</option>
+        <option>Pediatria</option>
+        <option>Ginecologia</option>
+        <option>Cardiologia</option>
+      </select>
+    </section>
+
+    <section aria-live="polite" id="appointmentsSection">
+      <h2>Próximas Consultas</h2>
+      <ul id="appointmentsList" class="list"></ul>
+      <p id="noAppointments" class="muted">Sem consultas marcadas.</p>
+    </section>
+  </main>
+
+  <!-- Modal do formulário -->
+  <div <!--id="modal" class="modal" aria-hidden="true"--> </div> 
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="closeModal" class="close" aria-label="Fechar"></button>
+      <h3 id="modalTitle">Agendar Consulta</h3>
+      <form id="appointmentForm" novalidate>
+        <label>
+          Nome completo
+          <input type="text" name="name" id="name" required minlength="3" />
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" id="email" required />
+        </label>
+
+        <label>
+          Telefone
+          <input type="tel" name="phone" id="phone" pattern="[\d\s()+-]{6,20}" required />
+        </label>
+
+        <label>
+          Especialidade:
+          <select name="specialty" id="specialty" required>
+            <option value="">Selecione...</option>
+            <option>Clínica Geral</option>
+            <option>Pediatria</option>
+            <option>Ginecologia</option>
+            <option>Cardiologia</option>
+          </select>
+        </label>
+
+        <label>
+          Médico (opcional)
+          <input type="text" name="doctor" id="doctor" />
+        </label>
+
+        <label>
+          Data
+          <input type="date" name="date" id="date" required />
+        </label>
+
+        <label>
+          Hora
+          <input type="time" name="time" id="time" required />
+        </label>
+
+        <label>
+          Motivo / Observações
+          <textarea name="notes" id="notes" rows="3"></textarea>
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="primary">Confirmar</button>
+          <button type="button" id="cancelBtn">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
