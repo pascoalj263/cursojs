@@ -1,22 +1,18 @@
-let valores = [2,1,7,5,9,]
+let valores = [2,1,6,5,4,0]
+console.log(valores)//Forma padrão
+valores.push(3)//acrescentar um valor na ultima posição
 valores.sort()
-//console.log(valores)
 
-/*console.log(valores[0])
-console.log(valores[1])
-console.log(valores[2])
-console.log(valores[3])
-console.log(valores[4])
-console.log(valores[5]) 
+//console.log(`O nosso vetor é ${valores}`)
 
-for(var p = 0; p < valores.length; p++){
-    console.log(`A posição ${p} tem o valor ${valores[p]}`)
+/*for(p=0; p < valores.length ; p++ ){
+    console.log(`A posição ${p}, tem o valor ${valores[p]}`)
 }
+
+
 */
+
 for(let p in valores){
-    console.log(`A posição ${p} tem o valor ${valores[p]}`)
+    console.log(`a posição ${p} tem o valor ${valores[p]}`)
 }
-
-
-
-console.log(`Logo o vetor tem ${valores.length} posições`)
+console.log(`O nosso vetor tem ${valores.length} posições`)
